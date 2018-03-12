@@ -1,4 +1,5 @@
 defmodule MyList do
+  # Flatten
   # Base Case (degenerate case)
   def flatten([]) do
     IO.puts "def flatten([])"
@@ -21,6 +22,11 @@ defmodule MyList do
     IO.inspect head
     [ head ]
   end
+
+  # Sum
+  def sum([]), do: 0
+  def sum([head | tail]), do: sum(head) + sum(tail)
+  def sum(head), do: head
 end
 
 # MyList.flatten([[1], 2])
