@@ -2,25 +2,25 @@ defmodule MyList do
   # Flatten
   # Base Case (degenerate case)
   def flatten([]) do
-    IO.puts "def flatten([])"
+    IO.puts("def flatten([])")
     []
   end
 
   # Recursive call on List (all lists have head|tail)
-  def flatten([ head | tail ]) do
-    IO.puts "flatten([ head | tail ])"
-    IO.inspect head
-    IO.inspect tail
-    IO.puts "- - - -"
+  def flatten([head | tail]) do
+    IO.puts("flatten([ head | tail ])")
+    IO.inspect(head)
+    IO.inspect(tail)
+    IO.puts("- - - -")
     flatten(head) ++ flatten(tail)
   end
 
   # If get non-list item, turn into list with single item
   # We do NOT recurse here
   def flatten(head) do
-    IO.puts "flatten(head)..."
-    IO.inspect head
-    [ head ]
+    IO.puts("flatten(head)...")
+    IO.inspect(head)
+    [head]
   end
 
   # Sum
@@ -55,7 +55,6 @@ end
 # 2
 # def flatten([])
 # [1, 2]
-
 
 # Here's my explanation:
 
