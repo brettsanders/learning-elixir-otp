@@ -1,5 +1,7 @@
 #! /usr/bin/env elixir
 
+# 2.9 Exercises
+
 # Learning about the Enum Module and its Function
 # Enum
 # Enum has over 70 functions
@@ -60,3 +62,14 @@ Enum.sort(list, fn x, y -> x[:val] < y[:val] end)
 
 # uniq_by
 Enum.uniq_by([1, 2, 3, 2, 1, 1, 1, 1, 1], fn x -> x end)
+
+# 4. Transform [1, [[2], 3]] to [9, 4, 1] with and without pipe
+Enum.reverse(Enum.map(List.flatten([1, [[2], 3]]), fn x -> x * x end))
+# Better to write with Pipe
+result =
+  [1, [[2], 3]]
+  |> List.flatten()
+  |> Enum.map(fn x -> x * x end)
+  |> Enum.reverse()
+
+IO.puts(result)
